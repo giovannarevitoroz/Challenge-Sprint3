@@ -1,0 +1,187 @@
+Problema,Palavra,Probabilidade
+Bateria,bateria,0.18
+Bateria,ligar,0.10
+Bateria,luz,0.07
+Bateria ,painel,0.05
+Bateria,clique,0.04
+Bateria,acesa,0.03
+Filtro de Ar Sujo,filtro,0.11
+Filtro de Ar Sujo,motor,0.09
+Filtro de Ar Sujo,ar,0.08
+Filtro de Ar Sujo,sujo,0.05
+Filtro de Ar Sujo,cheiro,0.05
+Filtro de Ar Sujo,consumo,0.04
+Vela de Ignição,motor,0.12
+Vela de Ignição,ignição,0.06
+Vela de Ignição,engasgando,0.06
+Vela de Ignição,falhando,0.05
+Vela de Ignição,partida,0.04
+Vela de Ignição,vela,0.04
+Pneu descalibrado,pneu,0.13
+Pneu descalibrado,sinto,0.06
+Pneu descalibrado,volante,0.05
+Pneu descalibrado,puxando,0.05
+Pneu descalibrado,lado,0.04
+Pneu descalibrado,direção,0.04
+Alternador com defeito,bateria,0.12
+Alternador com defeito,luz,0.09
+Alternador com defeito,faróis,0.05
+Alternador com defeito,painel,0.03
+Alternador com defeito,piscando,0.03
+Alternador com defeito,acesa,0.03
+Falta de óleo no motor,óleo,0.19
+Falta de óleo no motor,luz,0.15
+Falta de óleo no motor,motor,0.13
+Falta de óleo no motor,barulho,0.07
+Falta de óleo no motor,estranho,0.03
+Falta de óleo no motor,cheiro,0.03
+Radiador com vazamento,líquido,0.10
+Radiador com vazamento,vazando,0.09
+Radiador com vazamento,superaquecendo,0.07
+Radiador com vazamento,radiador,0.07
+Radiador com vazamento,esquentando,0.05
+Radiador com vazamento,motor,0.05
+Correia dentada desgastada,motor,0.10
+Correia dentada desgastada,barulho,0.08
+Correia dentada desgastada,estranho,0.05
+Correia dentada desgastada,fazendo,0.05
+Correia dentada desgastada,som,0.04
+Correia dentada desgastada,acelerar,0.04
+Transmissão,marcha,0.14
+Transmissão,trocar,0.10
+Transmissão,transmissão,0.10
+Transmissão,barulho,0.06
+Transmissão,patinando,0.04
+Transmissão,fazendo,0.03
+Falha na Bomba de Combustível,combustível,0.20
+Falha na Bomba de Combustível,bomba,0.17
+Falha na Bomba de Combustível,falhando,0.07
+Falha na Bomba de Combustível,morrendo,0.07
+Falha na Bomba de Combustível,dificuldade,0.04
+Falha na Bomba de Combustível,ligar,0.04
+Disco de freio desgastado,freio,0.15
+Disco de freio desgastado,barulho,0.10
+Disco de freio desgastado,fazendo,0.08
+Disco de freio desgastado,frear,0.06
+Disco de freio desgastado,frenagem,0.04
+Disco de freio desgastado,parar,0.04
+Ar-condicionado,ar,0.23
+Ar-condicionado,condicionado,0.20
+Ar-condicionado,temperatura,0.10
+Ar-condicionado,esfriar,0.08
+Ar-condicionado,barulho,0.05
+Ar-condicionado,cheiro,0.04
+Suspensão danificada,balançando,0.13
+Suspensão danificada,sinto,0.09
+Suspensão danificada,suspensão,0.09
+Suspensão danificada,barulho,0.08
+Suspensão danificada,desestabilizado,0.06
+Suspensão danificada,desconfortável,0.04
+Bomba de água com defeito,motor,0.13
+Bomba de água com defeito,líquido,0.10
+Bomba de água com defeito,quente,0.07
+Bomba de água com defeito,superaquecendo,0.07
+Bomba de água com defeito,esquentando,0.07
+Bomba de água com defeito,sinto,0.04
+Sensor de oxigênio defeituoso,motor,0.11
+Sensor de oxigênio defeituoso,luz,0.08
+Sensor de oxigênio defeituoso,combustível,0.08
+Sensor de oxigênio defeituoso,desempenho,0.06
+Sensor de oxigênio defeituoso,consumo,0.05
+Sensor de oxigênio defeituoso,emitindo,0.04
+Sistema de escapamento,escapamento,0.13
+Sistema de escapamento,barulho,0.09
+Sistema de escapamento,fumaça,0.08
+Sistema de escapamento,desempenho,0.06
+Sistema de escapamento,motor,0.06
+Sistema de escapamento,cheiro,0.05
+Embreagem,embreagem,0.20
+Embreagem,marcha,0.10
+Embreagem,som,0.07
+Embreagem,barulho,0.06
+Embreagem,patinando,0.06
+Embreagem,pedal,0.05
+Amortecedores desgastados,instável,0.12
+Amortecedores desgastados,balançando,0.09
+Amortecedores desgastados,pulando,0.09
+Amortecedores desgastados,buraco,0.07
+Amortecedores desgastados,sinto,0.07
+Amortecedores desgastados,barulho,0.03
+Bomba de direção hidráulica,direção,0.16
+Bomba de direção hidráulica,volante,0.10
+Bomba de direção hidráulica,barulho,0.08
+Bomba de direção hidráulica,duro,0.08
+Bomba de direção hidráulica,fazendo,0.06
+Bomba de direção hidráulica,som,0.05
+Sensor de temperatura defeituoso,temperatura,0.14
+Sensor de temperatura defeituoso,superaquecendo,0.10
+Sensor de temperatura defeituoso,luz,0.07
+Sensor de temperatura defeituoso,painel,0.07
+Sensor de temperatura defeituoso,motor,0.07
+Sensor de temperatura defeituoso,esquentando,0.06
+Vazamento de óleo,óleo,0.21
+Vazamento de óleo,vazando,0.17
+Vazamento de óleo,poça,0.10
+Vazamento de óleo,chão,0.08
+Vazamento de óleo,cheiro,0.06
+Vazamento de óleo,luz,0.06
+Filtro de Combustível,combustível,0.16
+Filtro de Combustível,filtro,0.14
+Filtro de Combustível,desempenho,0.10
+Filtro de Combustível,aceleração,0.09
+Filtro de Combustível,falhando,0.08
+Filtro de Combustível,motor,0.05
+Sensor de pressão dos pneus defeituoso,pneu,0.17
+Sensor de pressão dos pneus defeituoso,luz,0.13
+Sensor de pressão dos pneus defeituoso,painel,0.13
+Sensor de pressão dos pneus defeituoso,pressão,0.09
+Sensor de pressão dos pneus defeituoso,piscando,0.08
+Sensor de pressão dos pneus defeituoso,alerta,0.07
+Bobina de ignição defeituosa,ignição,0.14
+Bobina de ignição defeituosa,luz,0.13
+Bobina de ignição defeituosa,painel,0.12
+Bobina de ignição defeituosa,motor,0.09
+Bobina de ignição defeituosa,acesa,0.07
+Bobina de ignição defeituosa,partida,0.07
+Falha no módulo ABS,abs,0.20
+Falha no módulo ABS,luz,0.14
+Falha no módulo ABS,acesa,0.12
+Falha no módulo ABS,freio,0.08
+Falha no módulo ABS,vibrando,0.06
+Falha no módulo ABS,barulho,0.04
+Termostato,temperatura,0.20
+Termostato,motor,0.11
+Termostato,luz,0.11
+Termostato,superaquecendo,0.07
+Termostato,acesa,0.07
+Termostato,esquentando,0.06
+Falha na Bomba de Vácuo,freio,0.15
+Falha na Bomba de Vácuo,bomba,0.11
+Falha na Bomba de Vácuo,vácuo,0.11
+Falha na Bomba de Vácuo,duro,0.10
+Falha na Bomba de Vácuo,pedal,0.09
+Falha na Bomba de Vácuo,frear,0.06
+Vazamento no sistema de exaustão,barulho,0.15
+Vazamento no sistema de exaustão,escapamento,0.13
+Vazamento no sistema de exaustão,vazamento,0.10
+Vazamento no sistema de exaustão,exaustão,0.10
+Vazamento no sistema de exaustão,fazendo,0.09
+Vazamento no sistema de exaustão,fumaça,0.07
+Falha na válvula EGR,egr,0.20
+Falha na válvula EGR,luz,0.17
+Falha na válvula EGR,potência,0.11
+Falha na válvula EGR,acesa,0.10
+Falha na válvula EGR,motor,0.07
+Falha na válvula EGR,desempenho,0.07
+Falha no sistema de Arrefecimento,temperatura,0.13
+Falha no sistema de Arrefecimento,motor,0.11
+Falha no sistema de Arrefecimento,luz,0.10
+Falha no sistema de Arrefecimento,superaquecendo,0.10
+Falha no sistema de Arrefecimento,arrefecimento,0.07
+Falha no sistema de Arrefecimento,acesa,0.07
+Alinhamento e Geometria,volante,0.14
+Alinhamento e Geometria,direção,0.11
+Alinhamento e Geometria,puxando,0.09
+Alinhamento e Geometria,pneu,0.08
+Alinhamento e Geometria,torto,0.08
+Alinhamento e Geometria,instável,0.06

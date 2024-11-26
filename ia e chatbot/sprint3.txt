@@ -1,0 +1,153 @@
+Membros:
+
+Giovanna Revito Roz - RM558981
+Kaian Gustavo de Oliveira Nascimento - RM558986
+Lucas Kenji Kikuchi - RM554424
+
+Explicação:
+
+O dataset 'dataset_carros.csv' é sintético, ou seja, criamos ele a partir de um programa em Python, que apresenta as colunas:
+	- ID: identificador do veículo
+	- Marca: marca do veículo
+	- Modelo: modelo do veículo
+	- Ano: ano em que o carro foi lançado
+	- Quilometragem: quantos quilómetros o veículo percorreu
+	- Último_reparo: qual a data do último reparo que o carro teve
+	- Qntd_reparos: quantos reparos / manutenções o carro passou durante sua vida útil
+	- Câmbio: Automático ou Manual
+O dataset conta com 10000 exemplos de carros, e foi construído para que possamos entender quais características em um veículo influenciam na quantidade de manutenções que ele deve passar ao longo de sua vida útil. Além disso, podemos entender se determinado problema que ocorre no carro está relacionado a sua quilometragem, por exemplo.
+
+Código utilizado:
+
+import pandas as pd
+import random
+from datetime import datetime, timedelta
+
+# Configurações do dataset
+num_rows = 10000 # número de linhas
+current_date = datetime.now() # obtém a data atual
+
+# Função para gerar quantidade de reparos com base na quilometragem e cambio (quanto maior a quilometragem, maior a quantidade de reparos. Se for manual, precisa passar por mais reparos.)
+def gerar_qntd_reparos(quilometragem, cambio):
+    if cambio == 'Automático':
+        return random.randint(max(1, quilometragem // 30000), max(1, quilometragem // 25000))
+    elif cambio == 'Manual':
+        return random.randint(max(1, quilometragem // 15000), max(2, quilometragem // 10000))
+
+# Função para gerar datas de último reparo
+def gerar_ultimo_reparo(qntd_reparos):
+    days_ago = random.randint(1, 365 // (qntd_reparos + 1))
+    return (current_date - timedelta(days=days_ago)).strftime('%Y-%m-%d')
+
+# Dados de marcas e modelos válidos
+carros = {
+    "Toyota": ["Corolla", "Camry", "Hilux", "Yaris", "Etios", "RAV4", "Land Cruiser", "C-HR", "Fortuner", "Vios"],
+    "Ford": ["Fiesta", "Focus", "Mustang", "EcoSport", "Ranger", "Fusion", "Edge", "Kuga", "Explorer", "F-150"],
+    "Chevrolet": ["Onix", "Tracker", "Camaro", "S10", "Prisma", "Spin", "Trailblazer", "Cobalt", "Cruz", "Sonic"],
+    "Honda": ["Civic", "Accord", "HR-V", "City", "WR-V", "Pilot", "CR-V", "Fit", "Odyssey", "Insight"],
+    "Volkswagen": ["Gol", "Polo", "Jetta", "T-Cross", "Virtus", "Amarok", "Up!", "Passat", "Arteon", "Touareg"],
+    "Nissan": ["March", "Altima", "Rogue", "Kicks", "Frontier", "Versa", "Titan", "370Z", "X-Trail", "Navara"],
+    "Hyundai": ["HB20", "Creta", "Santa Fe", "Azera", "Elantra", "Tucson", "Kona", "Sonata", "i30", "Veloster"],
+    "Kia": ["Picanto", "Seltos", "Sportage", "Cerato", "Stonic", "Sorento", "Soul", "Optima", "Carnival", "Niro"],
+    "Renault": ["Sandero", "Logan", "Duster", "Captur", "Kwid", "Zoe", "Clio", "Kangoo", "Talisman", "Mégane"],
+    "Peugeot": ["208", "3008", "5008", "2008", "301", "308", "508", "Partner", "Expert", "Boxer"],
+    "Fiat": ["Uno", "Argo", "Toro", "Mobi", "Fiorino", "Palio", "Strada", "Doblò", "Bravo", "Tipo"],
+    "Jeep": ["Compass", "Renegade", "Cherokee", "Grand Cherokee", "Wrangler", "Patriot", "Commander", "Gladiator", "Liberty", "Cherokee Trailhawk"],
+    "Mitsubishi": ["Lancer", "Outlander", "Pajero", "ASX", "L200", "Montero", "Eclipse Cross", "Galant", "Mirage", "Outlander Sport"],
+    "Subaru": ["Impreza", "Forester", "Outback", "XV", "Legacy", "BRZ", "WRX", "Ascent", "Crosstrek", "Tribeca"],
+    "BMW": ["320i", "X5", "Z4", "118i", "X3", "M3", "740i", "530i", "X1", "i3"],
+    "Mercedes-Benz": ["C-Class", "E-Class", "GLA", "GLC", "CLA", "S-Class", "A-Class", "GLE", "SLC", "G-Class"]
+}
+
+# Gerando o dataset
+data = []
+for i in range(num_rows):
+    marca = random.choice(list(carros.keys()))
+    modelo = random.choice(carros[marca])
+    ano = random.randint(2007, 2023)
+    quilometragem = random.randint(5000, 300000)
+    cambio = random.choice(['Manual', 'Automático'])
+    qntd_reparos = gerar_qntd_reparos(quilometragem, cambio)
+    ultimo_reparo = gerar_ultimo_reparo(qntd_reparos)
+
+
+    data.append({
+        "id": i + 1,
+        "marca": marca,
+        "modelo": modelo,
+        "ano": ano,
+        "quilometragem": quilometragem,
+        "ultimo_reparo": ultimo_reparo,
+        "qntd_reparos": qntd_reparos,
+        "cambio": cambio
+    })
+
+# Criando o DataFrame
+df = pd.DataFrame(data)
+
+# Salvando o arquivo .csv
+df.to_csv("dataset_carros.csv", index=False)
+
+
+O dataset 'palavras_chave.csv' também é sintético, e construímos ele com base em um programa Python e junção ao SpaCy, que analisa 50 frases geradas por IA, que representam frases ditas por usuários que estão relatando um problema no carro. Removemos valores desnecessários (pontuações e palavras irrelevantes) e calculamos o percentual de aparição de cada palavra, conseguindo assim obter as 6 palavras que mais aparecem em cada problema encontrado no carro. 
+O dataset é composto pelas seguintes colunas:
+	- Problema: qual o problema que a palavra está relacionada
+	- Palavra: a palavra que foi identificada
+	- Probabilidade: o percentual que essa palavra apareceu em nossa análise das frases
+O dataset conta com 6 exemplos de palavras para cada problema que julgamos ser importante, e tem como principal objetivo trazer funcionalidade ao nosso sistema de autodiagnóstico, permitindo assim identificar o problema inserido pelo usuário com maior precisão.
+
+Código utilizado:
+
+import spacy
+from collections import Counter
+
+# Carregar o modelo de linguagem do spaCy (Português)
+nlp = spacy.load("pt_core_news_sm")
+
+def calcular_probabilidades_spacy(frases, n=6):
+    # Juntar todas as frases em uma única string
+    texto = ' '.join(frases)
+
+    # Processar o texto com o spaCy
+    doc = nlp(texto)
+
+    # Filtrar tokens que não são pontuações ou stop
+    palavras_validas = [token.text.lower() for token in doc if not token.is_stop and not token.is_punct]
+
+    # Contar a frequência das palavras
+    contagem_palavras = Counter(palavras_validas)
+
+    # Calcular o total de palavras válidas
+    total_palavras = sum(contagem_palavras.values())
+
+    # Calcular a probabilidade de cada palavra
+    probabilidades = {palavra: contagem / total_palavras for palavra, contagem in contagem_palavras.items()}
+
+    # Ordenar as palavras por probabilidade e pegar as n mais comuns
+    top_palavras = sorted(probabilidades.items(), key=lambda item: item[1], reverse=True)[:n]
+
+    return top_palavras
+
+# Receber diferentes frases do usuário
+
+frases = []
+
+# ignora a palavra 'carro' já que é comum entre todos os problemas.
+frases_sem_carro = [' '.join(frase.replace("carro", "").split()) for frase in frases]
+
+# Obter as 6 palavras com maior probabilidade usando spaCy
+top_palavras = calcular_probabilidades_spacy(frases_sem_carro)
+
+# Exibir as palavras mais comuns com suas probabilidades
+print("As 6 palavras com maior probabilidade são:")
+for palavra, probabilidade in top_palavras:
+    print(f"{palavra}: {probabilidade:.4f}")
+
+
+O dataset 'frases.csv' possui 2 colunas:
+	- Problema: qual o problema que a frase está relacionada
+	- Frases: coluna de frases que estão relacionadas a algum problema
+Além das palavras-chave, podemos utilizar as frases analisadas no dataset acima para comparar as similaridades entre uma frase digitada pelo usuário e uma frase presente em nosso dataset.
+
+ 
+
